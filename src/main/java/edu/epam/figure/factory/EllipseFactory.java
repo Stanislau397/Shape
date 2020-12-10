@@ -3,7 +3,7 @@ package edu.epam.figure.factory;
 import edu.epam.figure.entity.impl.Ellipse;
 import edu.epam.figure.entity.Figure;
 import edu.epam.figure.entity.Point2d;
-import edu.epam.figure.parser.DoubleArrayParser;
+import edu.epam.figure.parser.PointParser;
 import edu.epam.figure.validation.EllipseValidator;
 
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class EllipseFactory implements FigureFactory {
     public List<Figure> createFigure(List<String> lines) {
         List<Figure> ellipseList = new ArrayList<>();
         EllipseValidator ellipseValidator = new EllipseValidator();
-        DoubleArrayParser parser = new DoubleArrayParser();
+        PointParser parser = new PointParser();
 
         for (String line : lines) {
 

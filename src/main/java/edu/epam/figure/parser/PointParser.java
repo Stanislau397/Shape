@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DoubleArrayParser {
+public class PointParser {
 
     public static final String REGEX_DELIMITER = "\\s+";
 
