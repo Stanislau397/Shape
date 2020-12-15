@@ -1,30 +1,31 @@
 package edu.epam.figure.factory;
 
-import edu.epam.figure.entity.impl.Ellipse;
-import edu.epam.figure.entity.Figure;
+import edu.epam.figure.constant.IndexConstant;
+import edu.epam.figure.entity.Ellipse;
 import edu.epam.figure.entity.Point2d;
-import edu.epam.figure.parser.PointParser;
-import edu.epam.figure.validation.EllipseValidator;
+import edu.epam.figure.parser.DoubleArrayParser;
+import edu.epam.figure.validator.EllipseValidator;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EllipseFactory implements FigureFactory {
+public class EllipseFactory {
 
-    @Override
-    public List<Figure> createFigure(List<String> lines) {
-        List<Figure> ellipseList = new ArrayList<>();
+    public List<Ellipse> createEllipse(List<String> lines) {
+        List<Ellipse> ellipseList = new ArrayList<>();
+        List<Double> coordinates;
         EllipseValidator ellipseValidator = new EllipseValidator();
-        PointParser parser = new PointParser();
+        DoubleArrayParser parser = new DoubleArrayParser();
 
         for (String line : lines) {
 
-            List<Double> coordinates = parser.parseToDoubleArray(line);
+            coordinates = parser.parseToDoubleArray(line);
 
             if (ellipseValidator.isValidEllipse(coordinates)) {
 
-                ellipseList.add(new Ellipse(new Point2d(coordinates.get(0), coordinates.get(1)),
-                        new Point2d(coordinates.get(2), coordinates.get(3))));
+                ellipseList.add(new Ellipse(
+                                new Point2d(coordinates.get(IndexConstant.INDEX_X1), coordinates.get(IndexConstant.INDEX_Y1)),
+                                new Point2d(coordinates.get(IndexConstant.INDEX_X2), coordinates.get(IndexConstant.INDEX_Y2))));
             }
         }
        return ellipseList;

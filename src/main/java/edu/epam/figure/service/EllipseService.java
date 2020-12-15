@@ -1,44 +1,64 @@
 package edu.epam.figure.service;
 
+import edu.epam.figure.entity.Ellipse;
 import edu.epam.figure.entity.Point2d;
-import edu.epam.figure.entity.impl.Ellipse;
 
 public class EllipseService {
 
-    public double calcAreaOfEllipse(Ellipse ellipse) {
-        Point2d begin = ellipse.getBeginPoint();
-        Point2d end = ellipse.getEndPoint();
+    public static EllipseService instance;
 
-        return Math.PI * ((end.getX() - begin.getX()) / 2 * (begin.getY() - end.getY()) / 2);
+    private EllipseService() {
+
+    }
+
+    public static EllipseService getInstance() {
+        if (instance == null) {
+            instance = new EllipseService();
+        }
+        return instance;
+    }
+
+    public double calcSquareOfEllipse(Ellipse ellipse) {
+        Point2d startPoint = ellipse.getStartPoint();
+        Point2d endPoint = ellipse.getEndPoint();
+        double majorAxis = Math.abs(startPoint.getX() - endPoint.getX());
+        double minorAxis = Math.abs(startPoint.getY() - endPoint.getY());
+
+        return (Math.PI * majorAxis * minorAxis) / 4;
     }
 
     public double calcPerimeterOfEllipse(Ellipse ellipse) {
-        Point2d begin = ellipse.getBeginPoint();
-        Point2d end = ellipse.getEndPoint();
+        Point2d startPoint = ellipse.getStartPoint();
+        Point2d endPoint = ellipse.getEndPoint();
+        double majorAxis = Math.abs(startPoint.getX() - endPoint.getX());
+        double minorAxis = Math.abs(startPoint.getY() - endPoint.getY());
+        int power = 2;
 
-        return Math.PI * ((end.getX() - begin.getX()) / 2 + (begin.getY() - end.getY()) / 2);
+        return ((Math.PI * minorAxis * majorAxis) + (Math.pow(minorAxis - majorAxis, power))) * 4;
     }
 
     public boolean isCircle(Ellipse ellipse) {
-        Point2d begin = ellipse.getBeginPoint();
-        Point2d end = ellipse.getEndPoint();
+        Point2d startPoint = ellipse.getStartPoint();
+        Point2d endPoint = ellipse.getEndPoint();
+        double majorAxis = Math.abs(startPoint.getX() - endPoint.getX());
+        double minorAxis = Math.abs(startPoint.getY() - endPoint.getY());
 
-        return end.getX() - begin.getX() == begin.getY() - end.getY();
+        return majorAxis == minorAxis;
     }
 
     public boolean isCrossOx(Ellipse ellipse) {
-        Point2d beginDot = ellipse.getBeginPoint();
-        Point2d endDot = ellipse.getEndPoint();
+        Point2d startPoint = ellipse.getStartPoint();
+        Point2d endPoint = ellipse.getEndPoint();
 
-        return Double.compare(beginDot.getY(), 0.0) >= 0
-                && Double.compare(endDot.getY(), 0.0) <= 0;
+        return Double.compare(startPoint.getY(), 0.0) >= 0
+                && Double.compare(endPoint.getY(), 0.0) <= 0;
     }
 
     public boolean isCrossOy(Ellipse ellipse) {
-        Point2d beginDot = ellipse.getBeginPoint();
-        Point2d endDot = ellipse.getEndPoint();
+        Point2d startPoint = ellipse.getStartPoint();
+        Point2d endPoint = ellipse.getEndPoint();
 
-        return Double.compare(beginDot.getX(), 0.0) <= 0
-                && Double.compare(endDot.getX(), 0.0) >= 0;
+        return Double.compare(startPoint.getX(), 0.0) <= 0
+                && Double.compare(endPoint.getX(), 0.0) >= 0;
     }
 }
