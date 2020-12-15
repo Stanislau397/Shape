@@ -2,7 +2,7 @@ package edu.epam.figure.repository.impl;
 
 import edu.epam.figure.entity.Ellipse;
 import edu.epam.figure.repository.EllipseRepository;
-import edu.epam.figure.repository.Specification;
+import edu.epam.figure.repository.EllipseSpecification;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -49,7 +49,7 @@ public class EllipseRepositoryImpl implements EllipseRepository<Ellipse> {
     }
 
     @Override
-    public List<Ellipse> query(Specification<Ellipse> specification) {
+    public List<Ellipse> query(EllipseSpecification<Ellipse> specification) {
         List<Ellipse> resultList = ellipses;
 
         return resultList.stream()

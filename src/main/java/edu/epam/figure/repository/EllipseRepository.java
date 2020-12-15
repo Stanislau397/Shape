@@ -13,7 +13,7 @@ public interface EllipseRepository<T> {
 
     List<T> sort(Comparator<? super T> comparator);
 
-    List<T> query(Specification<T> specification);
+    List<T> query(EllipseSpecification<T> specification);
 
 
 }

@@ -86,7 +86,7 @@ public class Ellipse implements Observable<EllipseObserver> {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(" startPoint = ").append(startPoint)
+        sb.append(" startPoint: ").append(startPoint)
                 .append(" endPoint: ").append(endPoint);
         return sb.toString();
     }

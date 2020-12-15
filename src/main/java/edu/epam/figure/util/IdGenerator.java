@@ -2,8 +2,8 @@ package edu.epam.figure.util;
 
 public class IdGenerator {
 
-    public static final long MIN_ID = Long.MIN_VALUE;
-    public static final long MAX_ID = Long.MAX_VALUE;
+    public static final long MIN_ID = 1;
+    public static final long MAX_ID = 100_000;
     private static long counter;
 
     public static long generateId() {

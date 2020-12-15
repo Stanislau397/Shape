@@ -6,7 +6,7 @@ import java.util.Map;
 public class WareHouse {
 
     private static WareHouse instance;
-    private Map<Long, Double> ellipses;
+    private Map<Long, EllipseData> ellipses;
 
     private WareHouse() {
         this.ellipses = new HashMap<>();
@@ -19,15 +19,15 @@ public class WareHouse {
         return instance;
     }
 
-    public void putToWareHouse(long ellipseId, double result) {
-        ellipses.put(ellipseId, result);
+    public void putToWareHouse(long ellipseId, EllipseData data) {
+        ellipses.put(ellipseId, data);
     }
 
     public void removeFromWareHouseById(long ellipseId) {
         ellipses.remove(ellipseId);
     }
 
-    public Map<Long, Double> getEllipses() {
+    public Map<Long, EllipseData> getEllipses() {
         return new HashMap<>(ellipses);
     }
 }
