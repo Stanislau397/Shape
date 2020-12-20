@@ -80,13 +80,14 @@ public class Ellipse implements Observable<EllipseObserver> {
         int result = (int) (ellipseId ^ (ellipseId >>> 32));
         result = 31 * result + (startPoint != null ? startPoint.hashCode() : 0);
         result = 31 * result + (endPoint != null ? endPoint.hashCode() : 0);
+        result = 31 * result + (observer != null ? observer.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(" startPoint: ").append(startPoint)
+        sb.append(" beginPoint = ").append(startPoint)
                 .append(" endPoint: ").append(endPoint);
         return sb.toString();
     }

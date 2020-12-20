@@ -1,7 +1,7 @@
-package edu.epam.figure.repository.impl;
+package edu.epam.figure.specification.impl;
 
 import edu.epam.figure.entity.Ellipse;
-import edu.epam.figure.repository.EllipseSpecification;
+import edu.epam.figure.specification.EllipseSpecification;
 
 public class IdSpecificationInterval implements EllipseSpecification<Ellipse> {
 

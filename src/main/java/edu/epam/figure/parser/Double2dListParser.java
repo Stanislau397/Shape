@@ -1,6 +1,5 @@
 package edu.epam.figure.parser;
 
-import edu.epam.figure.exception.ValidatorException;
 import edu.epam.figure.validator.ValueValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -10,27 +9,26 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class DoubleArrayParser {
+public class Double2dListParser {
 
-    public static final Logger logger = LogManager.getLogger(DoubleArrayParser.class);
+    public static final Logger logger = LogManager.getLogger(Double2dListParser.class);
     public static final String REGEX_DELIMITER = "\\s+";
 
-    public List<Double> parseToDoubleArray(String point) {
+    public List<List<Double>> parseToDouble2dList(String point) {
         List<String> points = parseToStringArray(point);
-        List<Double> coordinates = new ArrayList<>();
+        List<Double> doubles = new ArrayList<>();
+        List<List<Double>> coordinates = new ArrayList<>();
         ValueValidator valueValidator = new ValueValidator();
 
-        try {
+        for (String line : points) {
 
-            for (String line : points) {
-                if (valueValidator.isValidLine(line)) {
-                    coordinates.add(Double.parseDouble(line));
-                }
+            if (valueValidator.isDoubleLine(line)) {
+                doubles.add(Double.parseDouble(line));
+            } else {
+                logger.log(Level.WARN, "Cannot parse point! {}", line);
             }
-        } catch (ValidatorException e) {
-            logger.log(Level.ERROR, e.getMessage());
         }
-
+        coordinates.add(doubles);
         return coordinates;
     }
 

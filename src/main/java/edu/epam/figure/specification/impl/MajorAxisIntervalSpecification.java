@@ -1,8 +1,8 @@
-package edu.epam.figure.repository.impl;
+package edu.epam.figure.specification.impl;
 
 import edu.epam.figure.entity.Ellipse;
 import edu.epam.figure.entity.Point2d;
-import edu.epam.figure.repository.EllipseSpecification;
+import edu.epam.figure.specification.EllipseSpecification;
 
 public class MajorAxisIntervalSpecification implements EllipseSpecification<Ellipse> {
 

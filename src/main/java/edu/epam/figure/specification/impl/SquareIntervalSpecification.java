@@ -1,8 +1,9 @@
-package edu.epam.figure.repository.impl;
+package edu.epam.figure.specification.impl;
 
 import edu.epam.figure.entity.Ellipse;
-import edu.epam.figure.entity.Point2d;
-import edu.epam.figure.repository.EllipseSpecification;
+import edu.epam.figure.entity.EllipseData;
+import edu.epam.figure.entity.EllipseWareHouse;
+import edu.epam.figure.specification.EllipseSpecification;
 
 public class SquareIntervalSpecification implements EllipseSpecification<Ellipse> {
 
@@ -16,12 +17,10 @@ public class SquareIntervalSpecification implements EllipseSpecification<Ellipse
 
     @Override
     public boolean specify(Ellipse ellipse) {
-        Point2d startPoint = ellipse.getStartPoint();
-        Point2d endPoint = ellipse.getEndPoint();
-        double majorAxis = Math.abs(startPoint.getX() - endPoint.getX());
-        double minorAxis = Math.abs(startPoint.getY() - endPoint.getY());
+        EllipseWareHouse wareHouse = EllipseWareHouse.getInstance();
+        EllipseData data = wareHouse.get(ellipse.getEllipseId());
 
-        double ellipseSquare = (Math.PI * majorAxis * minorAxis) / 4;
+        double ellipseSquare = data.getSquare();
 
         return ellipseSquare >= squareFrom && ellipseSquare <= squareTo;
     }

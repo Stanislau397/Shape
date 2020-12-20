@@ -1,7 +1,6 @@
 package edu.epam.figure.validator;
 
-import edu.epam.figure.constant.IndexConstant;
-import edu.epam.figure.exception.ValidatorException;
+import edu.epam.figure.entity.Point2d;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -11,32 +10,29 @@ import java.util.List;
 public class EllipseValidator {
 
     public static final Logger logger = LogManager.getLogger(EllipseValidator.class);
+    private static final int INDEX_0 = 0;
+    private static final int INDEX_1 = 1;
 
-    public boolean isValidEllipse(List<Double> coordinates) {
-        ArgumentsValidator validator = new ArgumentsValidator();
-
-        try {
-
-            return validator.isEnoughArguments(coordinates) && canExist(coordinates) && isEqualPoints(coordinates);
-
-        } catch (ValidatorException e) {
-            logger.log(Level.ERROR, e.getMessage());
+    public boolean isEllipse(List<Point2d> points) {
+        boolean result = true;
+        if (!(isRectangle(points) && isEqualPoints(points))) {
+            logger.log(Level.WARN, "Invalid ellipse data!");
+            result = false;
         }
-
-        return false;
+        return result;
     }
 
-    public boolean canExist(List<Double> coordinates) {
-        double majorAxis = coordinates.get(IndexConstant.INDEX_X1) - coordinates.get(IndexConstant.INDEX_X2);
-        double minorAxis = coordinates.get(IndexConstant.INDEX_Y1) - coordinates.get(IndexConstant.INDEX_Y2);
+    public boolean isRectangle(List<Point2d> points) {
+        double majorAxis = points.get(INDEX_0).getX() - points.get(INDEX_1).getX();
+        double minorAxis = points.get(INDEX_0).getY() - points.get(INDEX_1).getY();
 
-        return majorAxis != minorAxis;
+        return (majorAxis != minorAxis);
     }
 
-    public boolean isEqualPoints(List<Double> coordinates) {
-        boolean condition1 = (coordinates.get(IndexConstant.INDEX_X1).equals(coordinates.get(IndexConstant.INDEX_X2)));
-        boolean condition2 = (coordinates.get(IndexConstant.INDEX_Y1).equals(coordinates.get(IndexConstant.INDEX_Y2)));
+    public boolean isEqualPoints(List<Point2d> points) {
+        boolean condition1 = (points.get(INDEX_0).getX() == points.get(INDEX_1).getX());
+        boolean condition2 = (points.get(INDEX_0).getY() == points.get(INDEX_1).getY());
 
-        return !condition1 || !condition2;
+        return (!condition1 || !condition2);
     }
 }

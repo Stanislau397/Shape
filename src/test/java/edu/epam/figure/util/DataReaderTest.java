@@ -1,5 +1,6 @@
 package edu.epam.figure.util;
 
+import edu.epam.figure.exception.FileIsEmptyException;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -19,8 +20,8 @@ public class DataReaderTest {
         this.dataReader = new DataReader();
     }
 
-    @Test
-    public void testReadDataFromFile() {
+    @Test(expectedExceptions = FileIsEmptyException.class)
+    public void testReadDataFromFile() throws FileIsEmptyException {
         List<String> result = dataReader.readDataFromFile(PATH);
         List<String> expResult = new ArrayList<>();
         expResult.add("2.0 3.0 4.0 6.0");

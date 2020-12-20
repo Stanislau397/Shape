@@ -1,5 +1,7 @@
 package edu.epam.figure.repository;
 
+import edu.epam.figure.specification.EllipseSpecification;
+
 import java.util.Comparator;
 import java.util.List;
 

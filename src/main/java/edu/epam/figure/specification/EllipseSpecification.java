@@ -1,4 +1,4 @@
-package edu.epam.figure.repository;
+package edu.epam.figure.specification;
 
 public interface EllipseSpecification<T> {
 
