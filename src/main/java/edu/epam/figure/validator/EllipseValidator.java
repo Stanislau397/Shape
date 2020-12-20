@@ -10,12 +10,10 @@ import java.util.List;
 public class EllipseValidator {
 
     public static final Logger logger = LogManager.getLogger(EllipseValidator.class);
-    private static final int INDEX_0 = 0;
-    private static final int INDEX_1 = 1;
 
     public boolean isEllipse(List<Point2d> points) {
-        boolean result = true;
-        if (!(isRectangle(points) && isEqualPoints(points))) {
+        boolean result = isRectangle(points) && isNotEqualMajorAxis(points) && isNotEqualMinorAxis(points);
+        if (!result) {
             logger.log(Level.WARN, "Invalid ellipse data!");
             result = false;
         }
@@ -23,16 +21,21 @@ public class EllipseValidator {
     }
 
     public boolean isRectangle(List<Point2d> points) {
-        double majorAxis = points.get(INDEX_0).getX() - points.get(INDEX_1).getX();
-        double minorAxis = points.get(INDEX_0).getY() - points.get(INDEX_1).getY();
+        double majorAxis = points.get(0).getX() - points.get(1).getX();
+        double minorAxis = points.get(0).getY() - points.get(1).getY();
 
         return (majorAxis != minorAxis);
     }
 
-    public boolean isEqualPoints(List<Point2d> points) {
-        boolean condition1 = (points.get(INDEX_0).getX() == points.get(INDEX_1).getX());
-        boolean condition2 = (points.get(INDEX_0).getY() == points.get(INDEX_1).getY());
+    public boolean isNotEqualMajorAxis(List<Point2d> points) {
+        boolean result = (points.get(0).getX() != points.get(1).getX());
 
-        return (!condition1 || !condition2);
+        return result;
+    }
+
+    public boolean isNotEqualMinorAxis(List<Point2d> points) {
+        boolean result = (points.get(0).getY() != points.get(1).getY());
+
+        return result;
     }
 }
