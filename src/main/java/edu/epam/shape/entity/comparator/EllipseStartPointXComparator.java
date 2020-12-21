@@ -1,4 +1,4 @@
-package edu.epam.shape.comparator;
+package edu.epam.shape.entity.comparator;
 
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.entity.Point2d;

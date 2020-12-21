@@ -1,6 +1,6 @@
 package edu.epam.shape.repository.impl;
 
-import edu.epam.shape.comparator.EllipseIdComparator;
+import edu.epam.shape.entity.comparator.EllipseIdComparator;
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.entity.Point2d;
 import edu.epam.shape.specification.impl.IdIntervalSpecification;

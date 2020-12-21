@@ -1,12 +1,10 @@
-package edu.epam.shape.comparator;
+package edu.epam.shape.entity.comparator;
 
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.entity.Point2d;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.*;
 
 public class EllipseStartPointXComparatorTest {
 
