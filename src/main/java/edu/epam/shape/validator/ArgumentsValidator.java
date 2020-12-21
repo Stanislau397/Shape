@@ -7,6 +7,6 @@ public class ArgumentsValidator {
     private static final int ARGUMENTS = 4;
 
     public boolean isEnoughArguments(List<Double> coordinates) {
-        return ARGUMENTS == coordinates.size();
+        return (ARGUMENTS == coordinates.size());
     }
 }

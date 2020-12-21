@@ -3,12 +3,12 @@ package edu.epam.shape.specification.impl;
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.specification.EllipseSpecification;
 
-public class IdSpecificationInterval implements EllipseSpecification<Ellipse> {
+public class IdIntervalSpecification implements EllipseSpecification<Ellipse> {
 
     private double idFrom;
     private double idTo;
 
-    public IdSpecificationInterval(double idFrom, double idTo) {
+    public IdIntervalSpecification(double idFrom, double idTo) {
         this.idFrom = idFrom;
         this.idTo = idTo;
     }

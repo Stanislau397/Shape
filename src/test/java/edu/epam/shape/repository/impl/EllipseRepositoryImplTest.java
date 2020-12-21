@@ -3,7 +3,7 @@ package edu.epam.shape.repository.impl;
 import edu.epam.shape.comparator.EllipseIdComparator;
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.entity.Point2d;
-import edu.epam.shape.specification.impl.IdSpecificationInterval;
+import edu.epam.shape.specification.impl.IdIntervalSpecification;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -15,11 +15,11 @@ import static org.testng.Assert.*;
 
 public class EllipseRepositoryImplTest {
 
-    EllipseRepositoryImpl repository;
+    EllipseRepository repository;
 
     @BeforeTest
     public void setUp() {
-        this.repository = EllipseRepositoryImpl.getInstance();
+        this.repository = EllipseRepository.getInstance();
     }
 
     @Test
@@ -40,7 +40,7 @@ public class EllipseRepositoryImplTest {
 
     @Test
     public void testQuery() {
-        IdSpecificationInterval specification = new IdSpecificationInterval(1, 3);
+        IdIntervalSpecification specification = new IdIntervalSpecification(1, 3);
         Ellipse ellipse = new Ellipse(new Point2d(2.0, 3.0), new Point2d(4.0, 6.0));
         Ellipse ellipse1 = new Ellipse(new Point2d(3.0, 4.0), new Point2d(4.0, 6.0));
         repository.add(ellipse);

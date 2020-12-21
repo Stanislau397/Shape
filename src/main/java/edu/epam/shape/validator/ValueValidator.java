@@ -7,6 +7,6 @@ public class ValueValidator {
     public static final String REGEX_DOUBLE = "[+-]*((\\d+\\.?\\d*)|(\\d*\\.?\\d+))";
 
     public boolean isDoubleLine(String line) {
-        return Pattern.matches(REGEX_DOUBLE, line);
+        return (Pattern.matches(REGEX_DOUBLE, line));
     }
 }

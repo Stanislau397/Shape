@@ -18,7 +18,7 @@ public class PointParser {
     private static final int INDEX_Y2 = 3;
 
     public List<Point2d> parseToPointList(List<String> lines) {
-        Double2dListParser parser = new Double2dListParser();
+        DoubleListOfListsParser parser = new DoubleListOfListsParser();
         ArgumentsValidator validator = new ArgumentsValidator();
         List<Point2d> points = new ArrayList<>();
         List<List<Double>> coordinates;
@@ -26,7 +26,7 @@ public class PointParser {
 
         for (String line : lines) {
 
-            coordinates = parser.parseToDouble2dList(line);
+            coordinates = parser.parseToDoubleListOfLists(line);
             index = index + 1;
 
             if (validator.isEnoughArguments(coordinates.get(0))) {

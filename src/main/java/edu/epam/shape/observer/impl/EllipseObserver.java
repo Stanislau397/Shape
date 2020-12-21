@@ -3,10 +3,10 @@ package edu.epam.shape.observer.impl;
 import edu.epam.shape.entity.Ellipse;
 import edu.epam.shape.entity.EllipseData;
 import edu.epam.shape.entity.EllipseWareHouse;
-import edu.epam.shape.observer.EllipseObserver;
+import edu.epam.shape.observer.Observer;
 import edu.epam.shape.service.EllipseService;
 
-public class EllipseObserverImpl implements EllipseObserver<Ellipse> {
+public class EllipseObserver implements Observer<Ellipse> {
 
     @Override
     public void performPerimeter(Ellipse ellipse) {

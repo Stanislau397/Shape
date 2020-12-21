@@ -9,12 +9,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Double2dListParser {
+public class DoubleListOfListsParser {
 
-    public static final Logger logger = LogManager.getLogger(Double2dListParser.class);
+    public static final Logger logger = LogManager.getLogger(DoubleListOfListsParser.class);
     public static final String REGEX_DELIMITER = "\\s+";
 
-    public List<List<Double>> parseToDouble2dList(String point) {
+    public List<List<Double>> parseToDoubleListOfLists(String point) {
         List<String> points = parseToStringArray(point);
         List<Double> doubles = new ArrayList<>();
         List<List<Double>> coordinates = new ArrayList<>();

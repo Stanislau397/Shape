@@ -12,7 +12,9 @@ public class EllipseValidator {
     public static final Logger logger = LogManager.getLogger(EllipseValidator.class);
 
     public boolean isEllipse(List<Point2d> points) {
-        boolean result = isRectangle(points) && isNotEqualPointX(points) && isNotEqualPointY(points);
+        boolean result = isRectangle(points)
+                && isNotEqualPointX(points)
+                && isNotEqualPointY(points);
 
         if (!result) {
             logger.log(Level.WARN, "Invalid ellipse data!");

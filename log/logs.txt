@@ -11,20 +11,20 @@
 18:23:28.238 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
 18:23:58.774 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
 18:25:29.693 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
-18:26:58.884 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 1.a
+18:26:58.884 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 1.a
 18:26:58.887 [main] WARN  edu.epam.shape.parser.PointParser - Not enough arguments to parse line: 1.a
-18:27:20.653 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 1.a
+18:27:20.653 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 1.a
 18:27:20.655 [main] WARN  edu.epam.shape.parser.PointParser - Not enough arguments to parse line: 1.a
 18:27:20.657 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
-18:29:30.250 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 1.a
+18:29:30.250 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 1.a
 18:29:30.253 [main] WARN  edu.epam.shape.parser.PointParser - Not enough arguments to parse line: 1.a
 18:29:30.255 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
-18:30:10.003 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 1.a
+18:30:10.003 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 1.a
 18:30:10.005 [main] WARN  edu.epam.shape.parser.PointParser - Not enough arguments to parse line: 1.a
 18:30:10.008 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
 18:30:10.008 [main] WARN  epam.figure.factory.impl.EllipseFactory - Cannot create Ellipse with given data!
-19:27:03.724 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 2.0,
-19:27:03.726 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 3.0,
-19:27:03.727 [main] WARN  edu.epam.shape.parser.Double2dListParser - Cannot parse point! 4.0,
+19:27:03.724 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 2.0,
+19:27:03.726 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 3.0,
+19:27:03.727 [main] WARN  edu.epam.shape.parser.DoubleListOfListsParser - Cannot parse point! 4.0,
 19:56:17.250 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!
 20:01:14.123 [main] WARN  edu.epam.shape.validator.EllipseValidator - Invalid ellipse data!

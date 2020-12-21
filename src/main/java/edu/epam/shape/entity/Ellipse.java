@@ -1,16 +1,16 @@
 package edu.epam.shape.entity;
 
 import edu.epam.shape.observer.Observable;
-import edu.epam.shape.observer.EllipseObserver;
-import edu.epam.shape.observer.impl.EllipseObserverImpl;
+import edu.epam.shape.observer.Observer;
+import edu.epam.shape.observer.impl.EllipseObserver;
 import edu.epam.shape.util.IdGenerator;
 
-public class Ellipse implements Observable<EllipseObserverImpl> {
+public class Ellipse implements Observable<EllipseObserver> {
 
     private long ellipseId;
     private Point2d startPoint;
     private Point2d endPoint;
-    private EllipseObserver<Ellipse> observer;
+    private Observer<Ellipse> observer;
 
     public Ellipse(Point2d startPoint, Point2d endPoint) {
         ellipseId = IdGenerator.generateId();
@@ -46,12 +46,12 @@ public class Ellipse implements Observable<EllipseObserverImpl> {
     }
 
     @Override
-    public void attach(EllipseObserverImpl observer) {
+    public void attach(EllipseObserver observer) {
         this.observer = observer;
     }
 
     @Override
-    public void detach(EllipseObserverImpl observer) {
+    public void detach(EllipseObserver observer) {
         this.observer = null;
     }
 

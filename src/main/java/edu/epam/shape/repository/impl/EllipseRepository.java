@@ -1,7 +1,7 @@
 package edu.epam.shape.repository.impl;
 
 import edu.epam.shape.entity.Ellipse;
-import edu.epam.shape.repository.EllipseRepository;
+import edu.epam.shape.repository.Repository;
 import edu.epam.shape.specification.EllipseSpecification;
 
 import java.util.ArrayList;
@@ -9,18 +9,18 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EllipseRepositoryImpl implements EllipseRepository<Ellipse> {
+public class EllipseRepository implements Repository<Ellipse> {
 
-    private static EllipseRepositoryImpl instance;
+    private static EllipseRepository instance;
     private List<Ellipse> ellipses;
 
-    private EllipseRepositoryImpl() {
+    private EllipseRepository() {
         this.ellipses = new ArrayList<>();
     }
 
-    public static EllipseRepositoryImpl getInstance() {
+    public static EllipseRepository getInstance() {
         if (instance == null) {
-            instance = new EllipseRepositoryImpl();
+            instance = new EllipseRepository();
         }
         return instance;
     }

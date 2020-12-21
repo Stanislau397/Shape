@@ -12,17 +12,17 @@ import static org.testng.Assert.*;
 
 public class Double2dListParserTest {
 
-    Double2dListParser parser;
+    DoubleListOfListsParser parser;
 
     @BeforeTest
     public void setUp() {
-        this.parser = new Double2dListParser();
+        this.parser = new DoubleListOfListsParser();
     }
 
     @Test
     public void testParseToDouble2dList() {
         List<Double> doubles = Arrays.asList(2.0, 3.0, 4.0, 6.0);
-        List<List<Double>> result = parser.parseToDouble2dList("2.0 3.0 4.0 6.0");
+        List<List<Double>> result = parser.parseToDoubleListOfLists("2.0 3.0 4.0 6.0");
         List<List<Double>> expResult = Arrays.asList(doubles);
 
         assertEquals(result, expResult);

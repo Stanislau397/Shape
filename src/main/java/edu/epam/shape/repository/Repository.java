@@ -5,7 +5,7 @@ import edu.epam.shape.specification.EllipseSpecification;
 import java.util.Comparator;
 import java.util.List;
 
-public interface EllipseRepository<T> {
+public interface Repository<T> {
 
     void add(T t);
 
